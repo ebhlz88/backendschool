@@ -21,6 +21,12 @@ from school import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.studentslist),
+    path('student/<int:roll>', views.studentByroll),
     path('fees', views.feesget),
-    path('paymonth/<int:roll>/<int:yerr>/<str:month>/<str:standardd>',views.feespost),
+    path('feespost/<int:roll>/<int:yerr>/<str:month>/<str:standardd>',views.feespost),
+    path('resultpost/<int:roll>/<int:yerr>/<str:standardd>/<str:ssubject>',views.postresult),
+    path('yearlist', views.yearview),
+    path('monthlist', views.monthsview),
+    path('result/<int:sroll>', views.getstudentresult),
+
 ]

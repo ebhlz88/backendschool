@@ -61,6 +61,11 @@ class studentsresultSerializer(serializers.ModelSerializer):
     class Meta: 
         model = marks
         fields = '__all__'
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        rep['enrollstudent'] = enrollSerializer(instance.enrollstudent).data
+        rep['subjectname'] = subjectsSerializer(instance.subjectname).data
+        return rep
     
 
 class subjectsSerializer(serializers.ModelSerializer):

@@ -51,9 +51,8 @@ class subjects(models.Model):
 class marks(models.Model):
     subjectname = models.ForeignKey(subjects,on_delete=models.DO_NOTHING)
     enrollstudent = models.ForeignKey(enroll_student,on_delete=models.CASCADE)
-    subjectmarks = models.PositiveSmallIntegerField()
-    def __str__(self):
-        return str(self.student)
+    subjectmarks = models.PositiveSmallIntegerField(default=0,null=True)
+    
     
 class teacherdetail(models.Model):
     t_name = models.CharField(max_length=50)
