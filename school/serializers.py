@@ -55,6 +55,12 @@ class t_paymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = teachpaymonths
         fields = '__all__'
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        rep['teacher'] = teacherdetailSerializer(instance.teacher).data
+        rep['months'] = monthsSerializer(instance.months).data
+        rep['years'] = yearsSerializer(instance.years).data
+        return rep
 
 class studentsresultSerializer(serializers.ModelSerializer):
 

@@ -4,8 +4,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import studentsdetail,yearclass,months,teacherdetail,teachpaymonths,fees,enroll_student,schoolclasses,marks,subjects
-from .serializers import studentsdetailSerializer,yearsSerializer,monthsSerializer,teacherdetailSerializer,feesSerializer,studentsresultSerializer
+from .models import studentsdetail,yearclass,months,fees,enroll_student,schoolclasses,marks,subjects
+from .serializers import studentsdetailSerializer,yearsSerializer,monthsSerializer,feesSerializer,studentsresultSerializer
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from django.http.response import JsonResponse

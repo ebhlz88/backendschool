@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from school import views
+from school import Teacher
 
 
 urlpatterns = [
@@ -28,5 +29,10 @@ urlpatterns = [
     path('yearlist', views.yearview),
     path('monthlist', views.monthsview),
     path('result/<int:sroll>', views.getstudentresult),
+
+
+    path('allteachers', Teacher.teacheroverall),
+    path('teacherpayment/<int:pk>', Teacher.teacherpaymentview),
+    path('tpaymentpost/<int:pk>/<int:tyear>/<str:monthh>', Teacher.updateteacherpayments),
 
 ]

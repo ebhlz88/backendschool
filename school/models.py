@@ -74,7 +74,7 @@ class teachpaymonths(models.Model):
     years = models.ForeignKey(yearclass,on_delete=models.DO_NOTHING)
     months = models.ForeignKey(months,on_delete=models.DO_NOTHING)
     teacher = models.ForeignKey(teacherdetail,on_delete=models.CASCADE)
-    teacheramount = models.IntegerField()
+    teacheramount = models.IntegerField(default=0,null=True)
 
 
 
